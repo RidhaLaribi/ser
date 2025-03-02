@@ -34,7 +34,7 @@ app.post("/ask-ai", async (req, res) => {
             messages: [
                 {
                     role: "system",
-                    content: "You are a helpful medical assistant. Only answer medical questions and do not provide general knowledge."
+                    content: "your name is jemy ,You are a helpful medical assistant. Only answer medical questions and do not provide general knowledge and answer with less than 20 words."
                 },
                 { role: "user", content: prompt }],
         });
