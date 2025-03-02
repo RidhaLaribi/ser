@@ -2,13 +2,17 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
   "type": "module",
   "dependencies": {
-    "@mistralai/mistralai": "^latest",
-    "express": "^latest",
-    "cors": "^latest",
-    "dotenv": "^latest",
-    "zod": "^latest"
+    "@mistralai/mistralai": "^1.5.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "zod": "^1.2.5"
   },
   "scripts": {
     "start": "node server.js",
