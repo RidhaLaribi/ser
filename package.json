@@ -2,19 +2,16 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "type": "module",
   "dependencies": {
-    "@mistralai/mistralai": "^1.5.0",
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.7",
-    "express": "^4.21.2",
+    "@mistralai/mistralai": "^latest",
+    "express": "^latest",
+    "cors": "^latest",
+    "dotenv": "^latest",
     "zod": "^latest"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "build": "npm install && npm install zod"
   }
 }
