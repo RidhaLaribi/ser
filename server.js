@@ -3,18 +3,18 @@ import cors from "cors";
 import dotenv from "dotenv";
 import { Mistral } from "@mistralai/mistralai";
 
-import "dotenv/config"; // ✅ Load .env using import
+import "dotenv/config"; // .env 
 
-const apiKey = process.env.MISTRAL_API_KEY;  // ✅ Get API key
+const apiKey = process.env.MISTRAL_API_KEY;
 
 if (!apiKey) {
-    console.error("❌ MISTRAL_API_KEY is missing in .env file!");
-    process.exit(1);  // Stop execution if the key is missing
+    console.error(" MISTRAL_API_KEY is missing in .env file!");
+    process.exit(1);
 }
 
-const client = new Mistral({ apiKey: apiKey });  // ✅ Use API key
+const client = new Mistral({ apiKey: apiKey });
 
-console.log("✅ Mistral API is ready!");
+console.log(" API ready");
 
 
 
@@ -27,7 +27,7 @@ app.use(express.json());
 app.post("/ask-ai", async (req, res) => {
     try {
         const { prompt } = req.body;
-        console.log("Received prompt:", prompt);  // ✅ Debug log
+        console.log("Received prompt:", prompt);
 
         const result = await client.chat.stream({
             model: "mistral-small-latest",
@@ -44,11 +44,11 @@ app.post("/ask-ai", async (req, res) => {
             fullResponse += chunk.data.choices[0].delta.content;
         }
 
-        console.log("AI Response:", fullResponse);  // ✅ Debug log
+        console.log("AI Response:", fullResponse);
         res.json({ response: fullResponse });
 
     } catch (error) {
-        console.error("Error:", error);  // ✅ Debug log
+        console.error("Error:", error);
         res.status(500).json({ error: error.message });
     }
 });
